@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Таблица студентов</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+  crossorigin="anonymous"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script defer type="module" src="index.js"></script>
+  <style>
+    .input-form {
+      margin-top: 20px;
+      width: 50%;
+      text-align: center;
+    }
+    .centered {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="container" class="container">
+    <div class="container centered">
+      <form class="input-form needs-validation" novalidate>
+        <div class="input-group has-validation">
+          <input type="text" required class="form-control mt-4" id="addName" placeholder="Имя">
+          <div class="invalid-feedback">
+            Введите имя
+          </div>
+        </div>
+        <div class="input-group has-validation">
+          <input type="text" required class="form-control mt-4" id="addMiddleName" placeholder="Отчество">
+          <div class="invalid-feedback">
+            Введите отчество
+          </div>
+        </div>
+        <div class="input-group has-validation">
+          <input type="text" required class="form-control mt-4" id="addSurname" placeholder="Фамилия">
+          <div class="invalid-feedback">
+            Введите фамилию
+          </div>
+        </div>
+        <div class="input-group has-validation">
+          <input type="date" required class="form-control mt-4" id="addDateOfBirth" placeholder="Дата рождения" min="1900-01-01">
+          <div class="invalid-feedback">
+            Дата рождения должна быть в диапазоне от 01.01.1900 до текущей даты
+          </div>
+        </div>
+        <div class="input-group has-validation">
+          <input type="number" required class="form-control mt-4" id="addStartYear" placeholder="Год начала обучения" min="2000">
+          <div class="invalid-feedback">
+            Год начала обучения должен быть в диапазоне от 2000-го до текущего года
+          </div>
+        </div>
+        <div class="input-group has-validation">
+          <input type="text" required class="form-control mt-4" id="addFaculty" placeholder="Факультет">
+          <div class="invalid-feedback">
+            Введите факультет
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary m-1 my-4">Добавить студента</button>
+      </form>
+    </div>
+
+    <div class="input-group mb-3">
+      <input type="text" class="form-control mx-2" id="filterFio" placeholder="ФИО">
+      <input type="text" class="form-control mx-2" id="filterFaculty" placeholder="Факультет">
+      <input type="text" class="form-control mx-2" id="filterStartYear" placeholder="Год начала обучения">
+      <input type="text" class="form-control mx-2" id="filterEndYear" placeholder="Год окончания обучения">
+    </div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col" id="fio">ФИО студента <span id="iconFio"/></th>
+          <th scope="col" id="faculty">Факультет <span id="iconFaculty"/></th>
+          <th scope="col" id="birthdateAndAge">ДР и возраст <span id="iconBirthdate"/></th>
+          <th scope="col" id="yearsOfEducation">Годы обучения <span id="iconYearsEducation"/></th>
+        </tr>
+      </thead>
+      <tbody class="tbody" id="tbody"/>
+    </table>
+  </div>
+</body>
+</html>
